@@ -6,7 +6,7 @@ CMS CloudFlare
 [![Build Status](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare.png?branch=master)](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare)
 [![Latest Version](https://poser.pugx.org/graham-campbell/cms-cloudflare/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
 [![Total Downloads](https://poser.pugx.org/graham-campbell/cms-cloudflare/downloads.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare/badges/quality-score.png?s=dc4c5381f6889d8e70061d20d77fe81b571676bd)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare/badges/quality-score.png?s=4ad15489ff848af2982e501526b7cce5fffb1961)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare)
 [![Still Maintained](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare.png)](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare)
 
 
