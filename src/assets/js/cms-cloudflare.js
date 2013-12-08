@@ -3,7 +3,7 @@ $(document).ready(function() {
         url: cmsCloudFlareURL,
         type: "GET",
         dataType: "html",
-        timeout: 5000,
+        timeout: 10000,
         success: function(data, status, xhr) {
             var area = $('#data');
             area.fadeOut(200, function() {
