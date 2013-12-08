@@ -1,0 +1,27 @@
+{
+    "name": "graham-campbell/cms-cloudflare",
+    "description": "CMS CloudFlare Is A Bootstrap CMS Plugin That Adds A CloudFlare Admin Module",
+    "keywords": ["laravel", "framework", "cms cloudflare", "cms", "cloudflare api", "CloudFlare", "CMS CloudFlare", "CMS-CloudFlare", "Graham Campbell", "GrahamCampbell"],
+    "license": "GNU Affero General Public License v3",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "graham@mineuk.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.7",
+        "graham-campbell/cms-core": "dev-master",
+        "graham-campbell/cloudflare-api": "dev-develop"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.8.*@stable",
+        "phpunit/phpunit": "3.7.*@stable"
+    },
+    "autoload": {
+        "psr-0": {
+            "GrahamCampbell\\CMSCloudFlare": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
