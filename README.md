@@ -12,7 +12,7 @@ CMS CloudFlare
 
 ## What Is CMS CloudFlare?
 
-CMS CloudFlare is a [Bootstrap CMS](https://github.com/GrahamCampbell/Boostrap-CMS) plugin that adds a CloudFlare admin module.  
+CMS CloudFlare is a [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) plugin that adds a CloudFlare admin module.  
 
 * CMS CloudFlare was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * CMS CloudFlare relies on my [CMS Core](https://github.com/GrahamCampbell/CMS-Core) and [CloudFlare API](https://github.com/GrahamCampbell/CloudFlare-API) packages.  
