@@ -20,10 +20,7 @@
  * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
  */
 
-use CloudFlareAPI;
-
-use GrahamCampbell\CMSCore\Models\Page;
-
+use GrahamCampbell\CloudFlareAPI\Facades\CloudFlareAPI;
 use GrahamCampbell\CMSCore\Controllers\BaseController;
 
 class CloudFlareController extends BaseController {
