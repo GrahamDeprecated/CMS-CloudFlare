@@ -41,6 +41,7 @@ class CMSCloudFlareServiceProvider extends ServiceProvider {
 
         include __DIR__.'/../../routes.php';
         include __DIR__.'/../../listeners.php';
+        include __DIR__.'/../../assets.php';
     }
 
     /**

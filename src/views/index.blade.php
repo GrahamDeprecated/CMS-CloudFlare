@@ -17,15 +17,7 @@ CloudFlare
 
 @section('js')
 <script>
-    $(function(){
-        var request = $.get('{{ URL::route('cloudflare.data') }}');
-        request.success(function(result) {
-            $('#data').addClass('well');
-            $('#data').html(result);
-        });
-        request.error(function(jqXHR, textStatus, errorThrown) {
-            $('#data').html('<p class="lead">There was an error getting the data</p>');
-        });
-    });
+var cmsCloudFlareURL = {{ URL::route('cloudflare.data') }};
 </script>
+{{ Asset::scripts('cloudflare') }}
 @stop
