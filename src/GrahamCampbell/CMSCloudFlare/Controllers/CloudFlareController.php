@@ -45,7 +45,7 @@ class CloudFlareController extends BaseController {
      * @return \Illuminate\Http\Response
      */
     public function getIndex() {
-        return $this->viewMake('cloudflare::index', array(), true);
+        return $this->viewMake('cms-cloudflare::index', array(), true);
     }
 
     /**
@@ -56,6 +56,6 @@ class CloudFlareController extends BaseController {
     public function getData() {
         $stats = CloudFlareAPI::api_stats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
-        return $this->viewMake('cloudflare::data', array('data' => $data), true);
+        return $this->viewMake('cms-cloudflare::data', array('data' => $data), true);
     }
 }
