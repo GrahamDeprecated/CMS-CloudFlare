@@ -17,7 +17,7 @@ CloudFlare
 
 @section('js')
 <script>
-var cmsCloudFlareURL = {{ URL::route('cloudflare.data') }};
+var cmsCloudFlareURL = '{{ URL::route('cloudflare.data') }}';
 </script>
 {{ Asset::scripts('cloudflare') }}
 @stop
