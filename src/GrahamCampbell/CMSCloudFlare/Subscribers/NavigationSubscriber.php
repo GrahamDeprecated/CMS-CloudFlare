@@ -33,8 +33,8 @@ class NavigationSubscriber {
      * @return array
      */
     public function subscribe($events) {
-        $events->listen('navigation.main', 'GrahamCampbell\CMSCloudFlare\Subscribers\NavigationSubscriber@onNavigationMain', 4);
-        $events->listen('navigation.bar', 'GrahamCampbell\CMSCloudFlare\Subscribers\NavigationSubscriber@onNavigationBar', 4);
+        $events->listen('navigation.main', 'GrahamCampbell\CMSCloudFlare\Subscribers\NavigationSubscriber@onNavigationMain', 6);
+        $events->listen('navigation.bar', 'GrahamCampbell\CMSCloudFlare\Subscribers\NavigationSubscriber@onNavigationBar', 6);
     }
 
     /**
