@@ -54,6 +54,8 @@ class CloudFlareController extends BaseController {
      * @return \Illuminate\Http\Response
      */
     public function getData() {
+        $this->checkAjax();
+
         $stats = CloudFlareAPI::api_stats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
         return $this->viewMake('cms-cloudflare::data', array('data' => $data), true);
