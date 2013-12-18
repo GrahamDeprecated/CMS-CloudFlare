@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\CMSCloudFlare;
+<?php
 
 /**
  * This file is part of CMS CloudFlare by Graham Campbell.
@@ -12,16 +12,21 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- *
- * @package    CMS-CloudFlare
- * @author     Graham Campbell
- * @license    GNU AFFERO GENERAL PUBLIC LICENSE
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
  */
+
+namespace GrahamCampbell\CMSCloudFlare;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * This is the cms cloudflare service provider class.
+ *
+ * @package    CMS-CloudFlare
+ * @author     Graham Campbell
+ * @copyright  Copyright (C) 2013  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
+ */
 class CMSCloudFlareServiceProvider extends ServiceProvider
 {
     /**
