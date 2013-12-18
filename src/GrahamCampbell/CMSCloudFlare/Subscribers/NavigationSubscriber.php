@@ -26,7 +26,6 @@ use GrahamCampbell\Navigation\Facades\Navigation;
 
 class NavigationSubscriber
 {
-
     /**
      * Register the listeners for the subscriber.
      *
