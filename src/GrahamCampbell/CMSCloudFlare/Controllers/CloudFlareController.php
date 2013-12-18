@@ -23,14 +23,15 @@
 use GrahamCampbell\CloudFlareAPI\Facades\CloudFlareAPI;
 use GrahamCampbell\CMSCore\Controllers\BaseController;
 
-class CloudFlareController extends BaseController {
-
+class CloudFlareController extends BaseController
+{
     /**
      * Constructor (setup access permissions).
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->setPermissions(array(
             'getIndex' => 'admin',
             'getData'  => 'admin',
@@ -44,7 +45,8 @@ class CloudFlareController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex() {
+    public function getIndex()
+    {
         return $this->viewMake('cms-cloudflare::index', array(), true);
     }
 
@@ -53,7 +55,8 @@ class CloudFlareController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getData() {
+    public function getData()
+    {
         $this->checkAjax();
 
         $stats = CloudFlareAPI::api_stats();

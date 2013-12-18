@@ -22,8 +22,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class CMSCloudFlareServiceProvider extends ServiceProvider {
-
+class CMSCloudFlareServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -36,7 +36,8 @@ class CMSCloudFlareServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         $this->package('graham-campbell/cms-cloudflare');
 
         include __DIR__.'/../../routes.php';
@@ -49,7 +50,8 @@ class CMSCloudFlareServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function register() {
+    public function register()
+    {
         //
     }
 
@@ -58,7 +60,8 @@ class CMSCloudFlareServiceProvider extends ServiceProvider {
      *
      * @return array
      */
-    public function provides() {
+    public function provides()
+    {
         return array();
     }
 }
