@@ -3,30 +3,30 @@ CMS CloudFlare
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/CMS-CloudFlare/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Build Status](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare.png?branch=master)](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare)
-[![Latest Version](https://poser.pugx.org/graham-campbell/cms-cloudflare/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
-[![Total Downloads](https://poser.pugx.org/graham-campbell/cms-cloudflare/downloads.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
+[![Build Status](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare.png?branch=develop)](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare)
+[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-CloudFlare/badge.png?branch=develop)](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare/badges/quality-score.png?s=4ad15489ff848af2982e501526b7cce5fffb1961)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare)
+[![Latest Version](https://poser.pugx.org/graham-campbell/cms-cloudflare/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
 [![Still Maintained](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare.png)](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare)
 
 
 ## What Is CMS CloudFlare?
 
-CMS CloudFlare is a [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) plugin that adds a CloudFlare admin module.  
+CMS CloudFlare is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugin that adds a CloudFlare admin module.  
 
 * CMS CloudFlare was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * CMS CloudFlare relies on my [CMS Core](https://github.com/GrahamCampbell/CMS-Core) and [CloudFlare API](https://github.com/GrahamCampbell/CloudFlare-API) packages.  
 * CMS CloudFlare uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare) to run tests to check if it's working as it should.  
-* CMS CloudFlare uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare) to run additional tests and checks.  
+* CMS CloudFlare uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare) to run additional tests and checks.  
 * CMS CloudFlare uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* CMS CloudFlare provides a [change log](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-CloudFlare/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-CloudFlare/wiki).  
-* CMS CloudFlare is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md).  
+* CMS CloudFlare provides a [change log](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-CloudFlare/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-CloudFlare/wiki).  
+* CMS CloudFlare is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/LICENSE.md).  
 
 
 ## System Requirements
 
-* PHP 5.4+ or PHP 5.5+ is required.
-* You will need [Laravel 4](http://laravel.com) because this package is designed for it.  
+* PHP 5.4.7+ or PHP 5.5+ is required.  
+* You will need a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) application like [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of CMS-CloudFlare.  
 
 
@@ -34,20 +34,32 @@ CMS CloudFlare is a [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-
 
 Please check the system requirements before installing CMS CloudFlare.  
 
-To get the latest version of CMS CloudFlare, simply require it in your `composer.json` file.
+To get the latest version of CMS CloudFlare, simply require it in your `composer.json` file.  
 
-`"graham-campbell/cms-cloudflare": "dev-master"`
+`"graham-campbell/cms-cloudflare": "dev-master"`  
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.  
 
-You will need to register the [Laravel Core API](https://github.com/GrahamCampbell/Laravel-Core-API) and [Laravel CloudFlare API](https://github.com/GrahamCampbell/Laravel-CloudFlare-API) service providers before you attempt to load the CMS CloudFlare service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
-`'GrahamCampbell\CoreAPI\CoreAPIServiceProvider'`
-`'GrahamCampbell\CloudFlareAPI\CloudFlareAPIServiceProvider'`
+You will need to register many service providers before you attempt to load the CMS CloudFlare service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
 
-Once CMS CloudFlare is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+`'GrahamCampbell\Queuing\QueuingServiceProvider'`  
+`'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`  
+`'GrahamCampbell\Security\SecurityMinServiceProvider'`  
+`'GrahamCampbell\Binput\BinputServiceProvider'`  
+`'GrahamCampbell\Passwd\PasswdServiceProvider'`  
+`'GrahamCampbell\Navigation\NavigationServiceProvider'`  
+`'GrahamCampbell\CMSCore\CMSCoreServiceProvider'`  
+`'GrahamCampbell\CloudFlareAPI\CloudFlareAPIServiceProvider'`  
 
-`'GrahamCampbell\CMSCloudFlare\CMSCloudFlareServiceProvider'`
+Once CMS CloudFlare is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
+
+`'GrahamCampbell\CMSCloudFlare\CMSCloudFlareServiceProvider'`  
+
+
+## Usage
+
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/CMS-CloudFlare) for CMS CloudFlare.  
 
 
 ## Updating Your Fork
@@ -76,14 +88,14 @@ Please submit pull requests against the develop branch.
 * Any pull requests made against the master branch will be closed immediately.  
 * If you plan to fix a bug, please create a branch called `fix-`, followed by an appropriate name.  
 * If you plan to add a feature, please create a branch called `feature-`, followed by an appropriate name.  
-* Please indent with 4 spaces rather than tabs, and make sure your code is commented.  
+* Please follow the [PSR-2 Coding Style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PHP-FIG Naming Conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md).  
 
 
 ## License
 
 GNU AFFERO GENERAL PUBLIC LICENSE  
 
-CMS CloudFlare Is A Bootstrap CMS Plugin That Adds A CloudFlare Form Backend  
+CMS CloudFlare Is A CMS Core Plugin That Adds A CloudFlare Admin Module  
 Copyright (C) 2013  Graham Campbell  
 
 This program is free software: you can redistribute it and/or modify

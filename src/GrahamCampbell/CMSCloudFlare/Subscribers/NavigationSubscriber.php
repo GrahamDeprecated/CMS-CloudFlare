@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\CMSCloudFlare\Subscribers;
+<?php
 
 /**
  * This file is part of CMS CloudFlare by Graham Campbell.
@@ -12,27 +12,33 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
+ */
+
+namespace GrahamCampbell\CMSCloudFlare\Subscribers;
+
+use Cartalyst\Sentry\Facades\Laravel\Sentry;
+use GrahamCampbell\CMSCore\Facades\PageProvider;
+use GrahamCampbell\Navigation\Facades\Navigation;
+
+/**
+ * This is the navigation subscriber class.
  *
  * @package    CMS-CloudFlare
  * @author     Graham Campbell
- * @license    GNU AFFERO GENERAL PUBLIC LICENSE
  * @copyright  Copyright (C) 2013  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
  */
-
-use Navigation;
-use PageProvider;
-use Sentry;
-
-class NavigationSubscriber {
-
+class NavigationSubscriber
+{
     /**
      * Register the listeners for the subscriber.
      *
      * @param  Illuminate\Events\Dispatcher  $events
      * @return array
      */
-    public function subscribe($events) {
+    public function subscribe($events)
+    {
         $events->listen('navigation.main', 'GrahamCampbell\CMSCloudFlare\Subscribers\NavigationSubscriber@onNavigationMain', 6);
         $events->listen('navigation.bar', 'GrahamCampbell\CMSCloudFlare\Subscribers\NavigationSubscriber@onNavigationBar', 6);
     }
@@ -43,7 +49,8 @@ class NavigationSubscriber {
      * @param  mixed  $event
      * @return void
      */
-    public function onNavigationMain($event) {
+    public function onNavigationMain($event)
+    {
         if (PageProvider::getNavUser()) {
             if (Sentry::getUser()->hasAccess('admin')) {
                 // add the cloudflare link
@@ -58,7 +65,8 @@ class NavigationSubscriber {
      * @param  mixed  $event
      * @return void
      */
-    public function onNavigationBar($event) {
+    public function onNavigationBar($event)
+    {
         if (PageProvider::getNavUser()) {
             if (Sentry::getUser()->hasAccess('admin')) {
                 // add the cloudflare link
