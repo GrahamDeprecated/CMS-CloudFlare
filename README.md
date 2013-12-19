@@ -59,8 +59,7 @@ Once CMS CloudFlare is installed, you need to register the service provider. Ope
 
 ## Usage
 
-There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/CMS-CloudFlare
-) for CMS CloudFlare.  
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/CMS-CloudFlare) for CMS CloudFlare.  
 
 
 ## Updating Your Fork
