@@ -17,7 +17,7 @@
 namespace GrahamCampbell\CMSCloudFlare\Controllers;
 
 use GrahamCampbell\CloudFlareAPI\Facades\CloudFlareAPI;
-use GrahamCampbell\CMSCore\Controllers\BaseController;
+use GrahamCampbell\CMSCore\Controllers\AbstractController;
 
 /**
  * This is the cloudflare controller class.
@@ -28,7 +28,7 @@ use GrahamCampbell\CMSCore\Controllers\BaseController;
  * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
  */
-class CloudFlareController extends BaseController
+class CloudFlareController extends AbstractController
 {
     /**
      * Constructor (setup access permissions).
