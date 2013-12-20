@@ -45,11 +45,13 @@ You will need to register many service providers before you attempt to load the 
 
 `'GrahamCampbell\Queuing\QueuingServiceProvider'`  
 `'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`  
+`'GrahamCampbell\Markdown\MarkdownServiceProvider'`  
 `'GrahamCampbell\Security\SecurityMinServiceProvider'`  
 `'GrahamCampbell\Binput\BinputServiceProvider'`  
 `'GrahamCampbell\Passwd\PasswdServiceProvider'`  
 `'GrahamCampbell\Navigation\NavigationServiceProvider'`  
 `'GrahamCampbell\CMSCore\CMSCoreServiceProvider'`  
+`'GrahamCampbell\CoreAPI\CoreAPIServiceProvider'`  
 `'GrahamCampbell\CloudFlareAPI\CloudFlareAPIServiceProvider'`  
 
 Once CMS CloudFlare is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
