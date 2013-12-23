@@ -68,6 +68,6 @@ class CloudFlareController extends AbstractController
 
         $stats = CloudFlareAPI::api_stats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
-        return View::make('cms-cloudflare::data', array('data' => $data), true);
+        return View::make('cms-cloudflare::data', array('data' => $data));
     }
 }
