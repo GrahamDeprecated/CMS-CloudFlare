@@ -16,8 +16,6 @@
 
 namespace GrahamCampbell\CMSCloudFlare\Controllers;
 
-use Illuminate\Support\Facades\View;
-use GrahamCampbell\Credentials\Facades\Viewer;
 use GrahamCampbell\CloudFlareAPI\Facades\CloudFlareAPI;
 use GrahamCampbell\CMSCore\Controllers\AbstractController;
 
@@ -54,7 +52,7 @@ class CloudFlareController extends AbstractController
      */
     public function getIndex()
     {
-        return Viewer::make('cms-cloudflare::index', array(), true);
+        return $this->viewMake('cms-cloudflare::index', array(), true);
     }
 
     /**
@@ -68,6 +66,6 @@ class CloudFlareController extends AbstractController
 
         $stats = CloudFlareAPI::api_stats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
-        return View::make('cms-cloudflare::data', array('data' => $data), true);
+        return $this->viewMake('cms-cloudflare::data', array('data' => $data), true);
     }
 }
