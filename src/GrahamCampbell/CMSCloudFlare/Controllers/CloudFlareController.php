@@ -64,7 +64,7 @@ class CloudFlareController extends AbstractController
     {
         $this->checkAjax();
 
-        $stats = CloudFlareAPI::api_stats();
+        $stats = CloudFlareAPI::apiStats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
         return $this->viewMake('cms-cloudflare::data', array('data' => $data), true);
     }
