@@ -40,16 +40,26 @@ abstract class AbstractTestCase extends TestCase
     }
 
     /**
-     * Get the plugin service providers.
+     * Get the required service providers.
      *
      * @return array
      */
-    protected function getPluginProviders()
+    protected function getRequiredServiceProviders()
     {
-        return array(
+        return array_merge(parent::getRequiredServiceProviders(), array(
+            'GrahamCampbell\CMSCore\CMSCoreServiceProvider',
             'GrahamCampbell\CoreAPI\CoreAPIServiceProvider',
-            'GrahamCampbell\CloudFlareAPI\CloudFlareAPIServiceProvider',
-            'GrahamCampbell\CMSCloudFlare\CMSCloudFlareServiceProvider'
-        );
+            'GrahamCampbell\CloudFlareAPI\CloudFlareAPIServiceProvider'
+        ));
+    }
+
+    /**
+     * Get the service provider class.
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass()
+    {
+        return 'GrahamCampbell\CMSCloudFlare\CMSCloudFlareServiceProvider';
     }
 }
