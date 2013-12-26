@@ -14,6 +14,8 @@
  * GNU Affero General Public License for more details.
  */
 
+use Lightgear\Asset\Facades\Asset;
+
 Asset::registerScripts(array(
     'graham-campbell/cms-cloudflare/src/assets/js/cms-cloudflare.js'
 ), '', 'cloudflare');
