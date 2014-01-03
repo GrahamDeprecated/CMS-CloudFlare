@@ -4,12 +4,15 @@
 CloudFlare
 @stop
 
-@section('controls')
-<p class="lead">Here are your visitor statistics from CloudFlare:</p>
-<hr>
+@section('top')
+<div class="page-header">
+<h1>CloudFlare</h1>
+</div>
 @stop
 
 @section('content')
+<p class="lead">Here are your visitor statistics from CloudFlare:</p>
+<hr>
 <div id="data">
     <p class="lead"><i class="fa fa-refresh fa-spin fa-lg"></i> Loading...</p>
 </div>
