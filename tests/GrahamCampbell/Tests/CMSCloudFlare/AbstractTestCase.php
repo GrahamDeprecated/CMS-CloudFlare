@@ -14,12 +14,12 @@
  * GNU Affero General Public License for more details.
  */
 
-namespace GrahamCampbell\CMSCloudFlare;
+namespace GrahamCampbell\Tests\CMSCloudFlare;
 
-use Illuminate\Support\ServiceProvider;
+use GrahamCampbell\Tests\CMSCore\AbstractTestCase as TestCase;
 
 /**
- * This is the cms cloudflare service provider class.
+ * This is the abstract test case class.
  *
  * @package    CMS-CloudFlare
  * @author     Graham Campbell
@@ -27,46 +27,39 @@ use Illuminate\Support\ServiceProvider;
  * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
  */
-class CMSCloudFlareServiceProvider extends ServiceProvider
+abstract class AbstractTestCase extends TestCase
 {
     /**
-     * Indicates if loading of the provider is deferred.
+     * Get the application base path.
      *
-     * @var bool
+     * @return string
      */
-    protected $defer = false;
-
-    /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
+    protected function getBasePath()
     {
-        $this->package('graham-campbell/cms-cloudflare');
-
-        include __DIR__.'/../../routes.php';
-        include __DIR__.'/../../listeners.php';
-        include __DIR__.'/../../assets.php';
+        return __DIR__.'/../../../../src';
     }
 
     /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
-     * Get the services provided by the provider.
+     * Get the required service providers.
      *
      * @return array
      */
-    public function provides()
+    protected function getRequiredServiceProviders()
     {
-        return array();
+        return array_merge(parent::getRequiredServiceProviders(), array(
+            'GrahamCampbell\CMSCore\CMSCoreServiceProvider',
+            'GrahamCampbell\CoreAPI\CoreAPIServiceProvider',
+            'GrahamCampbell\CloudFlareAPI\CloudFlareAPIServiceProvider'
+        ));
+    }
+
+    /**
+     * Get the service provider class.
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass()
+    {
+        return 'GrahamCampbell\CMSCloudFlare\CMSCloudFlareServiceProvider';
     }
 }

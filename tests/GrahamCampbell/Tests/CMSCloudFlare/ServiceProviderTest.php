@@ -14,8 +14,20 @@
  * GNU Affero General Public License for more details.
  */
 
-use Lightgear\Asset\Facades\Asset;
+namespace GrahamCampbell\Tests\CMSCloudFlare;
 
-Asset::registerScripts(array(
-    'graham-campbell/cms-cloudflare/src/assets/js/cms-cloudflare.js'
-), '', 'cloudflare');
+use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
+
+/**
+ * This is the service provider test class.
+ *
+ * @package    CMS-CloudFlare
+ * @author     Graham Campbell
+ * @copyright  Copyright (C) 2013-2014  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
+ */
+class ServiceProviderTest extends AbstractTestCase
+{
+    use ServiceProviderTestCaseTrait;
+}

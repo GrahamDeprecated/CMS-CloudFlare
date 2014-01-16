@@ -16,19 +16,21 @@
 
 namespace GrahamCampbell\CMSCloudFlare\Controllers;
 
+use Illuminate\Support\Facades\View;
+use GrahamCampbell\Viewer\Facades\Viewer;
 use GrahamCampbell\CloudFlareAPI\Facades\CloudFlareAPI;
-use GrahamCampbell\CMSCore\Controllers\BaseController;
+use GrahamCampbell\CMSCore\Controllers\AbstractController;
 
 /**
  * This is the cloudflare controller class.
  *
  * @package    CMS-CloudFlare
  * @author     Graham Campbell
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/LICENSE.md
+ * @copyright  Copyright (C) 2013-2014  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
  */
-class CloudFlareController extends BaseController
+class CloudFlareController extends AbstractController
 {
     /**
      * Constructor (setup access permissions).
@@ -52,7 +54,7 @@ class CloudFlareController extends BaseController
      */
     public function getIndex()
     {
-        return $this->viewMake('cms-cloudflare::index', array(), true);
+        return Viewer::make('cms-cloudflare::index', array(), 'admin');
     }
 
     /**
@@ -64,8 +66,8 @@ class CloudFlareController extends BaseController
     {
         $this->checkAjax();
 
-        $stats = CloudFlareAPI::api_stats();
+        $stats = CloudFlareAPI::apiStats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
-        return $this->viewMake('cms-cloudflare::data', array('data' => $data), true);
+        return View::make('cms-cloudflare::data', array('data' => $data));
     }
 }

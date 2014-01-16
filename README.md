@@ -3,11 +3,16 @@ CMS CloudFlare
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/CMS-CloudFlare/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Build Status](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare.png?branch=develop)](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare)
-[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-CloudFlare/badge.png?branch=develop)](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare)
+[![Build Status](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare.png)](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare)
+[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-CloudFlare/badge.png)](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare/badges/quality-score.png?s=4ad15489ff848af2982e501526b7cce5fffb1961)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare)
 [![Latest Version](https://poser.pugx.org/graham-campbell/cms-cloudflare/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
 [![Still Maintained](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare.png)](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare)
+
+
+## WARNING
+
+#### This package will depreciated soon. The final release will be V0.2 Alpha. It has been replaced by my [Laravel CloudFlare](https://github.com/GrahamCampbell/Laravel-CloudFlare) package. This package new package will be compatible with all Laravel applications and will include native support for [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS). Note that [CMS Core](https://github.com/GrahamCampbell/CMS-Core) will also be deprecated.
 
 
 ## What Is CMS CloudFlare?
@@ -20,7 +25,7 @@ CMS CloudFlare is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugi
 * CMS CloudFlare uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare) to run additional tests and checks.  
 * CMS CloudFlare uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * CMS CloudFlare provides a [change log](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-CloudFlare/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-CloudFlare/wiki).  
-* CMS CloudFlare is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/LICENSE.md).  
+* CMS CloudFlare is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md).  
 
 
 ## System Requirements
@@ -36,20 +41,28 @@ Please check the system requirements before installing CMS CloudFlare.
 
 To get the latest version of CMS CloudFlare, simply require it in your `composer.json` file.  
 
-`"graham-campbell/cms-cloudflare": "dev-master"`  
+`"graham-campbell/cms-cloudflare": "*"`  
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.  
 
 
 You will need to register many service providers before you attempt to load the CMS CloudFlare service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
 
+`'Lightgear\Asset\AssetServiceProvider'`  
+`'Cartalyst\Sentry\SentryServiceProvider'`  
+`'GrahamCampbell\Viewer\ViewerServiceProvider'`  
 `'GrahamCampbell\Queuing\QueuingServiceProvider'`  
 `'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`  
-`'GrahamCampbell\Security\SecurityMinServiceProvider'`  
+`'GrahamCampbell\Markdown\MarkdownServiceProvider'`  
+`'GrahamCampbell\Flysystem\FlysystemServiceProvider'`  
+`'GrahamCampbell\Security\SecurityServiceProvider'`  
 `'GrahamCampbell\Binput\BinputServiceProvider'`  
 `'GrahamCampbell\Passwd\PasswdServiceProvider'`  
+`'GrahamCampbell\Throttle\ThrottleServiceProvider'`  
+`'GrahamCampbell\Credentials\CredentialsServiceProvider'`  
 `'GrahamCampbell\Navigation\NavigationServiceProvider'`  
 `'GrahamCampbell\CMSCore\CMSCoreServiceProvider'`  
+`'GrahamCampbell\CoreAPI\CoreAPIServiceProvider'`  
 `'GrahamCampbell\CloudFlareAPI\CloudFlareAPIServiceProvider'`  
 
 Once CMS CloudFlare is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
@@ -75,7 +88,7 @@ The first command is only necessary the first time. If you have issues merging, 
 
 You can then update the branch:  
 
-    git pull --rebase upstream develop
+    git pull --rebase upstream master
     git push --force origin <branch_name>
 
 Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git rebase --continue`, and `git push --force origin <branch_name>`.  
@@ -85,9 +98,8 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 Please submit pull requests against the develop branch.  
 
-* Any pull requests made against the master branch will be closed immediately.  
-* If you plan to fix a bug, please create a branch called `fix-`, followed by an appropriate name.  
-* If you plan to add a feature, please create a branch called `feature-`, followed by an appropriate name.  
+* Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
+* Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
 * Please follow the [PSR-2 Coding Style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PHP-FIG Naming Conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md).  
 
 
@@ -96,7 +108,7 @@ Please submit pull requests against the develop branch.
 GNU AFFERO GENERAL PUBLIC LICENSE  
 
 CMS CloudFlare Is A CMS Core Plugin That Adds A CloudFlare Admin Module  
-Copyright (C) 2013  Graham Campbell  
+Copyright (C) 2013-2014  Graham Campbell  
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
