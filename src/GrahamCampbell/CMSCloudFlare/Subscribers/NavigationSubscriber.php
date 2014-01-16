@@ -26,7 +26,7 @@ use GrahamCampbell\Navigation\Facades\Navigation;
  * @package    CMS-CloudFlare
  * @author     Graham Campbell
  * @copyright  Copyright (C) 2013-2014  Graham Campbell
- * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/develop/LICENSE.md
+ * @license    https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-CloudFlare
  */
 class NavigationSubscriber
