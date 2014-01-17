@@ -6,8 +6,8 @@ CMS CloudFlare
 [![Build Status](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare.png)](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare)
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-CloudFlare/badge.png)](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare/badges/quality-score.png?s=4ad15489ff848af2982e501526b7cce5fffb1961)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/41177cf4-9286-4ce8-b05c-041274cc18eb/mini.png)](https://insight.sensiolabs.com/projects/41177cf4-9286-4ce8-b05c-041274cc18eb)
 [![Latest Version](https://poser.pugx.org/graham-campbell/cms-cloudflare/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare.png)](http://stillmaintained.com/GrahamCampbell/CMS-CloudFlare)
 
 
 ## WARNING
@@ -24,7 +24,7 @@ CMS CloudFlare is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugi
 * CMS CloudFlare uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare) to run tests to check if it's working as it should.  
 * CMS CloudFlare uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare) to run additional tests and checks.  
 * CMS CloudFlare uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* CMS CloudFlare provides a [change log](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-CloudFlare/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-CloudFlare/wiki).  
+* CMS CloudFlare provides a [change log](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-CloudFlare/releases), and [api docs](http://grahamcampbell.github.io/CMS-CloudFlare).  
 * CMS CloudFlare is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md).  
 
 
@@ -98,7 +98,7 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 Please review these guidelines before submitting any pull requests.  
 
-* Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
+* When submitting bug fixes, check if a maintenance branch exists for an older series, then pull against that older branch if the bug is present in it.  
 * Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
 * Please follow the [PSR-2 Coding Style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PHP-FIG Naming Conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md).  
 
