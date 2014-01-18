@@ -21,8 +21,8 @@ CMS CloudFlare is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugi
 
 * CMS CloudFlare was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * CMS CloudFlare relies on my [CMS Core](https://github.com/GrahamCampbell/CMS-Core) and [CloudFlare API](https://github.com/GrahamCampbell/CloudFlare-API) packages.  
-* CMS CloudFlare uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare) to run tests to check if it's working as it should.  
-* CMS CloudFlare uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare) to run additional tests and checks.  
+* CMS CloudFlare uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-CloudFlare) with [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare) to check everything is working.  
+* CMS CloudFlare uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare) and [SensioLabsInsight](https://insight.sensiolabs.com/projects/41177cf4-9286-4ce8-b05c-041274cc18eb) to run additional checks.  
 * CMS CloudFlare uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * CMS CloudFlare provides a [change log](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-CloudFlare/releases), and [api docs](http://grahamcampbell.github.io/CMS-CloudFlare).  
 * CMS CloudFlare is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md).  
