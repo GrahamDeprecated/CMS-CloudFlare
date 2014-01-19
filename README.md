@@ -7,6 +7,7 @@ CMS CloudFlare
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-CloudFlare/badge.png)](https://coveralls.io/r/GrahamCampbell/CMS-CloudFlare)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare/badges/quality-score.png?s=4ad15489ff848af2982e501526b7cce5fffb1961)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-CloudFlare)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/41177cf4-9286-4ce8-b05c-041274cc18eb/mini.png)](https://insight.sensiolabs.com/projects/41177cf4-9286-4ce8-b05c-041274cc18eb)
+[![Software License](https://poser.pugx.org/graham-campbell/cms-cloudflare/license.png)](https://github.com/GrahamCampbell/CMS-CloudFlare/blob/master/LICENSE.md)
 [![Latest Version](https://poser.pugx.org/graham-campbell/cms-cloudflare/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-cloudflare)
 
 
