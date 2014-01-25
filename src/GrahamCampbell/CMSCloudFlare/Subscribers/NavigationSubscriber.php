@@ -16,7 +16,6 @@
 
 namespace GrahamCampbell\CMSCloudFlare\Subscribers;
 
-use GrahamCampbell\CMSCore\Facades\PageProvider;
 use GrahamCampbell\Navigation\Facades\Navigation;
 use GrahamCampbell\Credentials\Facades\Credentials;
 
@@ -51,7 +50,7 @@ class NavigationSubscriber
      */
     public function onNavigationMain($event)
     {
-        if (PageProvider::getNavUser()) {
+        if (Credentials::check()) {
             if (Credentials::hasAccess('admin')) {
                 // add the cloudflare link
                 Navigation::addMain(array('title' => 'CloudFlare', 'slug' => 'cloudflare', 'icon' => 'cloud'), 'admin');
@@ -67,7 +66,7 @@ class NavigationSubscriber
      */
     public function onNavigationBar($event)
     {
-        if (PageProvider::getNavUser()) {
+        if (Credentials::check()) {
             if (Credentials::hasAccess('admin')) {
                 // add the cloudflare link
                 Navigation::addBar(array('title' => 'CloudFlare', 'slug' => 'cloudflare', 'icon' => 'cloud'));
