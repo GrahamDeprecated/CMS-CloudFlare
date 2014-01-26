@@ -44,6 +44,8 @@ class CloudFlareController extends AbstractController
             'getData'  => 'admin',
         ));
 
+        $this->beforeFilter('ajax', array('only' => array('getData')));
+
         parent::__construct();
     }
 
@@ -64,8 +66,6 @@ class CloudFlareController extends AbstractController
      */
     public function getData()
     {
-        $this->checkAjax();
-
         $stats = CloudFlareAPI::apiStats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
         return View::make('cms-cloudflare::data', array('data' => $data));
