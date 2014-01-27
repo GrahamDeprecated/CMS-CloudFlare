@@ -18,6 +18,7 @@ namespace GrahamCampbell\CMSCloudFlare\Controllers;
 
 use Illuminate\Support\Facades\View;
 use GrahamCampbell\Viewer\Facades\Viewer;
+use GrahamCampbell\Credentials\Classes\Credentials;
 use GrahamCampbell\CloudFlareAPI\Facades\CloudFlareAPI;
 use GrahamCampbell\CMSCore\Controllers\AbstractController;
 
@@ -33,11 +34,12 @@ use GrahamCampbell\CMSCore\Controllers\AbstractController;
 class CloudFlareController extends AbstractController
 {
     /**
-     * Constructor (setup access permissions).
+     * Create a new instance.
      *
+     * @param  \GrahamCampbell\Credentials\Classes\Credentials  $credentials
      * @return void
      */
-    public function __construct()
+    public function __construct(Credentials $credentials)
     {
         $this->setPermissions(array(
             'getIndex' => 'admin',
@@ -46,7 +48,7 @@ class CloudFlareController extends AbstractController
 
         $this->beforeFilter('ajax', array('only' => array('getData')));
 
-        parent::__construct();
+        parent::__construct($credentials);
     }
 
     /**
