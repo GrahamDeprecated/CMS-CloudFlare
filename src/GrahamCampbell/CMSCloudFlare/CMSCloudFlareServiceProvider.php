@@ -57,7 +57,21 @@ class CMSCloudFlareServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerCloudFlareController();
+    }
+
+    /**
+     * Register the cloudflare controller class.
+     *
+     * @return void
+     */
+    protected function registerCloudFlareController()
+    {
+        $this->app->bind('GrahamCampbell\CMSCloudFlare\Controllers\CloudFlareController', function ($app) {
+            $credentials = $app['credentials'];
+
+            return new Controllers\CloudFlareController($credentials);
+        });
     }
 
     /**
