@@ -43,11 +43,11 @@ class CMSCloudFlareServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('graham-campbell/cms-cloudflare');
+        $this->package('graham-campbell/cms-cloudflare', 'graham-campbell/cms-cloudflare', __DIR__);
 
-        include __DIR__.'/../../routes.php';
-        include __DIR__.'/../../listeners.php';
-        include __DIR__.'/../../assets.php';
+        include __DIR__.'/routes.php';
+        include __DIR__.'/listeners.php';
+        include __DIR__.'/assets.php';
     }
 
     /**

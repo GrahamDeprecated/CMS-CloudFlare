@@ -46,9 +46,9 @@
         "graham-campbell/testbench": "0.2.*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "GrahamCampbell\\CMSCloudFlare\\": "src/",
-            "GrahamCampbell\\Tests\\CMSCloudFlare": "tests/"
+            "GrahamCampbell\\Tests\\CMSCloudFlare\\": "tests/"
         }
     },
     "extra": {

@@ -58,7 +58,7 @@ class CloudFlareController extends AbstractController
      */
     public function getIndex()
     {
-        return Viewer::make('cms-cloudflare::index', array(), 'admin');
+        return Viewer::make('graham-campbell/cms-cloudflare::index', array(), 'admin');
     }
 
     /**
@@ -70,6 +70,6 @@ class CloudFlareController extends AbstractController
     {
         $stats = CloudFlareAPI::apiStats();
         $data = $stats->json()['response']['result']['objs']['0']['trafficBreakdown'];
-        return View::make('cms-cloudflare::data', array('data' => $data));
+        return View::make('graham-campbell/cms-cloudflare::data', array('data' => $data));
     }
 }
